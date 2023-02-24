@@ -136,7 +136,7 @@ echo Height:
 echo Length:
   read -r length
 volume() {
-  vol=$width*$height*$length
+  vol=$((width*$height*$length))
   echo "The volume of the box is $vol"
 
 } 
@@ -175,7 +175,7 @@ while read -r line
 do  
     if [[ ! $line =~ ^[0-9] ]] #names don't start with numbers
     then 
-        echo $line >> out.txt
+        echo $line >> out.txt #all lines that don't start with numbers will be the stdoutput for a file out.txt
     fi
 
     if [[ $line =~ ^[a-zA-Z] ]] #start with letter
